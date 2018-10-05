@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0056)http://www.utilities-online.info/xmltojson/#.W7c_6Wgzabg -->
+<html class="yui3-js-enabled" id="yui_3_7_2_3_1538736104937_101"><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<title>XML to JSON and JSON to XML converter online</title>
+
+		<style type="text/css">
+
+	li {
+		padding: 5px; 
+	}
+	.ads {
+		background-color: #EEEEEE;
+		text-align: center;
+	}
+	.adsup {
+		border-bottom: 3px solid;
+	}
+	.adsdown {
+		border-top: 3px solid;
+	}
+	.body {
+		padding: 15px;
+		overflow: hidden;
+	}
+	.bravodriver {
+		background-image: url(/assets/images/bravodriver400x90.png);
+	}
+	.bravodriver:hover { 
+		cursor: pointer;
+	}
+	#epoch, #date {
+		font-weight: bold;
+	}
+	table {
+		width: 100%;	 
+	}
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+		
+</style>
+				<script src="./files/yui-min.js.завантаження"></script>
+
+
+		<link rel="stylesheet" type="text/css" href="./files/common.css">
+		<script type="text/javascript" src="./files/validation.nocache.js"></script>
+
+		<script type="text/javascript">
+
+			YUI().use("node", "event", "io", "json-parse", function (Y) {
+
+				Y.on("domready", function (e) {
+
+					Y.one("#example").on("click", function(e) {
+						Y.one("#xml").set("value", Y.io("example.xml", {sync: true}).responseText);
+					});
+
+					Y.one("#tojson").on("click", function(e) {
+						Y.one("#json").set("value", xmlToJson(Y.one("#xml").get("value")));
+					});
+
+					Y.one("#toxml").on("click", function(e) {
+						Y.one("#xml").set("value", jsonToXml(Y.one("#json").get("value")));
+					});
+				});
+
+			});
+
+		</script>
+
+		<style type="text/css">
+
+			.cols {
+				width: 48%;
+				float: left;
+				text-align: center;
+			}
+
+			.cols a {
+				float: right;
+			}
+
+			.cols p {
+				width: 90%;
+			}
+
+			.colmid {
+				width: 4%;
+				position: relative;
+				top: 180px;
+			}
+
+			.colmid input {
+				text-align: center;
+				width: 100%;
+			}
+
+			div > p {
+				margin-bottom: 0px;
+			}
+
+			.share {
+				font-size: 80%;
+				color: gray;
+				margin-top: 15px;
+				float: left;
+			}
+
+			.footer {
+				font-size: 80%;
+				color: gray;
+				margin-top: 15px;
+				float: left;
+				clear: left;
+			}
+
+		</style>
+
+	<body id="yui_3_7_2_3_1538736104937_100">
+
+		<div class="body" id="yui_3_7_2_3_1538736104937_99">
+
+			<style type="text/css">
+	
+	a:link, a:visited {
+		text-decoration: none;
+	}
+	
+	#title {
+		border-bottom: 1px dotted black;
+	    color: #333333;
+	    font-style: italic;
+	    text-align: center;
+	}
+	
+	#titletext {
+		vertical-align: super;
+		font-size: 30px;
+	}
+	
+	#logo {
+		width: 75px;
+	}
+	
+	.addthis_toolbox a iframe {
+		height: 20px !important;
+		width: 120px !important;
+	}
+	
+	a { 
+		cursor: pointer; 
+		color: blue; 
+	}
+	
+	a:hover, a.hover { 
+		text-decoration: underline; 
+	}
+	
+	.hide {
+		display: none;
+	}
+
+</style>
+
+<h1 id="title">
+</h1>
+
+<style type="text/css">
+	
+	#menu_hor {
+		list-style: none;
+		font-family: arial;  
+		background-color: #BBBBBB;
+	}
+	
+	#menu_hor li {
+		display: inline;
+		border-right: 2px solid;
+		color: black;
+		font-weight: bold;
+		padding: 0px;
+		white-space: nowrap;
+		margin-right: 3px;
+	}
+	
+	#menu_hor li:last-child {	
+		border-right: none;
+	}
+	
+	#menu_hor li a {
+		width: 100px;
+		padding: 0px;
+		margin-right: 10px;
+		text-decoration: none;
+	}
+	
+	#menu_hor li a:hover {
+		background-color: aqua;
+	}
+	
+</style>
+
+
+			<h3>XML to JSON and JSON to XML converter online</h3>
+			<p>In this page you can convert an xml to json and viceversa.</p>
+			<div>
+				<div class="cols">
+					<p>XML<a id="example">get example xml</a></p>
+					<div class="textareacontainer">
+						<textarea id="xml" rows="20" cols="20" wrap="off"></textarea>
+					</div>
+				</div>
+				<div class="cols colmid">
+					<input id="tojson" type="button" value="--&gt;">
+					<input id="toxml" type="button" value="&lt;--">
+				</div>
+				<div class="cols">
+					<p>JSON</p>
+					<div class="textareacontainer">
+						<textarea id="json" rows="20" cols="20" wrap="off"></textarea>
+					</div>
+				</div>
+			</div>
+
+
+		</div><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"></div><style id="service-icons-0"></style>
+<span>Last modify on Friday October 05, 2018</span>
+</html>
