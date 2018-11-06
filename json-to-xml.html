@@ -99,6 +99,7 @@ function runit(s) {
 
     <div class="row">
 	<div class="col-md-6">
+			<div class="form-group">
 
 	<label>JSON Data</label>  &nbsp; &nbsp;
     <input type="button" value="Clear Input" class="btn btn-primary" onclick="window.location.reload(true)" title="Clear screen">
@@ -112,6 +113,12 @@ function runit(s) {
       <input type="button" value="6" class="btn btn-primary" title="Load JSON from web page" onclick="document.getElementById('url').value='http://date.jsontest.com';document.getElementById('btnUrl').click()">
  
 	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="JSON Data" onchange="if(this.value!='')runit(document.getElementById('txt1').value)" wrap="off"></textarea>
+			</div>
+			<div class="form-group form-inline">
+						<label>Save your result:</label>
+<input type="text" size="15" id="fn1" value="convertjson" class="form-control" title="Enter filename without extension">.xml
+<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txt1').value,'json','fn1')">
+	        </div>
 	</div>
    
 	<div class="col-md-6">
@@ -123,8 +130,8 @@ function runit(s) {
 			</div>
 			<div class="form-group form-inline">
 						<label>Save your result:</label>
-<input type="text" size="15" id="fn" value="convertjson" class="form-control" title="Enter filename without extension">.xml
-<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txta').value,'xml','fn')">
+<input type="text" size="15" id="fn2" value="convertxml" class="form-control" title="Enter filename without extension">.xml
+<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txta').value,'xml','fn2')">
 	        </div>
 	<div id="diva"></div>
     </div>
