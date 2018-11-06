@@ -98,16 +98,12 @@ function runit(s) {
 	<div class="col-md-6 col-lg-6">
 			<div class="form-group">
     <input type="button" value="Clear Input" class="btn btn-primary" onclick="window.location.reload(true)">
+    <input type="button" value="Format XML" class="btn btn-primary" onclick="document.getElementById('txt1').value=formatXml(document.getElementById('txt1').value)" title="Format XML below to look pretty">
     &nbsp; Examples: 
       <input type="button" value="1" class="btn btn-primary" title="Load and run example" onclick="document.getElementById('txt1').value=getExampleXml(1);document.getElementById('btnRun').click()">
       <input type="button" value="2" class="btn btn-primary" title="Load and run example" onclick="document.getElementById('url').value='http://www.w3schools.com/xml/simple.xml';document.getElementById('btnUrl').click()">
 	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="XML Data" onchange="if(this.value!='')runit(this.value)" wrap="off"></textarea>
 			</div>
-			<div class="form-group form-inline">
-						<label>Save your result:</label>
-<input type="text" size="15" id="fn1" value="convertxml" class="form-control" title="Enter filename without extension">.xml
-<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txt1').value,'xml','fn1')">
-	        </div>
 	  </div>
 
         <div class="col-md-6 col-lg-6">
