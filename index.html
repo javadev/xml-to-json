@@ -1,201 +1,165 @@
 <!DOCTYPE html>
-<html class="yui3-js-enabled" id="yui_3_7_2_3_1538736104937_101">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Convert JSON to XML">
+<meta http-equiv="Cache-control" content="No-Cache">
+<meta name="keywords" content="Free Online XML To JSON Converter">
+<meta name="description" content="The tool will convert a XML file to JSON format.">
+<link rel="stylesheet" href="./files/bootstrap.min.css">
+<script src="./files/jquery.min.js" type="text/javascript"></script>
+<script src="./files/bootstrap.min.js"></script>
+<title>XML To JSON Converter</title>
+<script src="./files/localread.js"></script>
+<script src="./files/filesaver.js"></script>
+<script src="./files/csvsup.js"></script>
+<script src="./files/validation.nocache.js" type="text/javascript" ></script>
+<link rel="stylesheet" href="./files/nav.css">
 
-		
-		<title>XML to JSON and JSON to XML converter online</title>
+<script type="text/javascript">
+       
+function assignText(s) {
+   document.getElementById('txt1').value = s;
+}
+function runit(s) {
+   var t;
+   var s;
+   var keys = {};
+   var objects = {};
+   var msg='Invalid XML entered.';
 
-		<style type="text/css">
+   if(s.trim()!="") {
+      try {
+       t=xmlToJson(s);
+       if(t!="null" && t!="undefined")document.getElementById('txta').value = t;
+       }catch (e) {
+           alert(msg);
+           return;
+       }
 
-	li {
-		padding: 5px; 
-	}
-	.ads {
-		background-color: #EEEEEE;
-		text-align: center;
-	}
-	.adsup {
-		border-bottom: 3px solid;
-	}
-	.adsdown {
-		border-top: 3px solid;
-	}
-	.body {
-		padding: 15px;
-		overflow: hidden;
-	}
-	.bravodriver {
-		background-image: url(/assets/images/bravodriver400x90.png);
-	}
-	.bravodriver:hover { 
-		cursor: pointer;
-	}
-	#epoch, #date {
-		font-weight: bold;
-	}
-	table {
-		width: 100%;	 
-	}
-	body {
-		margin: 0px;
-		padding: 0px;
-	}
-		
-</style>
+       if(!t || t=="null") {alert(msg); }
+   }
+   
+}
 
-<link rel="icon" type="image/png" href="files/xmltojson.png" />
+function runit2(s) {
+   var t;
+   var s;
+   var keys = {};
+   var objects = {};
+   var msg='Invalid JSON entered.';
 
-				<script src="files/yui-min.js"></script>
-				<script src="files/combo1.js"></script>
-				<script src="files/combo2.js"></script>
-				<script src="files/combo3.js"></script>
+   if(s.trim()!="") {
+      try {
+       t=jsonToXml(s);
+       if(t!="null" && t!="undefined")document.getElementById('txt1').value = t;
+       }catch (e) {
+           alert(msg);
+           return;
+       }
 
+       if(!t || t=="null") {alert(msg); }
+   }
+   
+}
+</script>
 
-		<link rel="stylesheet" type="text/css" href="./files/common.css">
-		<script type="text/javascript" src="./files/validation.nocache.js"></script>
+<body>
+<div class="container-fluid">
 
-		<script type="text/javascript">
-
-			YUI().use("node", "event", "io", function (Y) {
-
-				Y.on("domready", function (e) {
-
-					Y.one("#example").on("click", function(e) {
-						Y.one("#xml").set("value", Y.io("example.xml", {sync: true}).responseText);
-					});
-
-					Y.one("#tojson").on("click", function(e) {
-						Y.one("#json").set("value", xmlToJson(Y.one("#xml").get("value")));
-					});
-
-					Y.one("#toxml").on("click", function(e) {
-						Y.one("#xml").set("value", jsonToXml(Y.one("#json").get("value")));
-					});
-				});
-
-			});
-
-		</script>
-
-		<style type="text/css">
-
-			.cols {
-				width: 48%;
-				float: left;
-				text-align: center;
-			}
-
-			.cols a {
-				float: right;
-			}
-
-			.cols p {
-				width: 90%;
-			}
-
-			.colmid {
-				width: 4%;
-				position: relative;
-				top: 180px;
-			}
-
-			.colmid input {
-				text-align: center;
-				width: 100%;
-			}
-
-			div > p {
-				margin-bottom: 0px;
-			}
-
-			.share {
-				font-size: 80%;
-				color: gray;
-				margin-top: 15px;
-				float: left;
-			}
-
-			.footer {
-				font-size: 80%;
-				color: gray;
-				margin-top: 15px;
-				float: left;
-				clear: left;
-			}
-
-		</style>
-
-</head>
-	<body id="yui_3_7_2_3_1538736104937_100">
-
-		<div class="body" id="yui_3_7_2_3_1538736104937_99">
-
-			<style type="text/css">
-	
-	a:link, a:visited {
-		text-decoration: none;
-	}
-	
-	#title {
-		border-bottom: 1px dotted black;
-	    color: #333333;
-	    font-style: italic;
-	    text-align: center;
-	}
-	
-	#titletext {
-		vertical-align: super;
-		font-size: 30px;
-	}
-	
-	#logo {
-		width: 75px;
-	}
-	
-	.addthis_toolbox a iframe {
-		height: 20px !important;
-		width: 120px !important;
-	}
-	
-	a { 
-		cursor: pointer; 
-		color: blue; 
-	}
-	
-	a:hover, a.hover { 
-		text-decoration: underline; 
-	}
-	
-	.hide {
-		display: none;
-	}
-
-</style>
-
-<h1 id="title">
-</h1>
-			<h3>XML to JSON and JSON to XML converter online</h3>
-			<p>In this page you can convert an xml to json and viceversa.</p>
-			<div>
-				<div class="cols">
-					<p>XML<a id="example">get example xml</a></p>
-					<div class="textareacontainer">
-						<textarea id="xml" rows="20" cols="20" wrap="off"></textarea>
+	<div class="row">
+		<div class="col-md-3">
+				<a href="https://javadev.github.io/xml-to-json/">
+					<div id="logo">
+						<img height="120px" src="./files/xmltojson.png" alt="Home Page">
 					</div>
-				</div>
-				<div class="cols colmid">
-					<input id="tojson" type="button" value="--&gt;">
-					<input id="toxml" type="button" value="&lt;--">
-				</div>
-				<div class="cols">
-					<p>JSON</p>
-					<div class="textareacontainer">
-						<textarea id="json" rows="20" cols="20" wrap="off"></textarea>
-					</div>
-				</div>
-			</div>
-
-
+				</a>
 		</div>
-<span>Last modify on Monday November 5, 2018</span>
-</html>
+		<div class="col-md-9">
+			<div id="site-title">
+                	    <div class="pageHeader">
+                <h1 class="text-center"></h1><h1>Convert XML To JSON</h1>
+        </div>
+
+				
+              <div class="row">
+                 <div class="container-fluid pageSubheader">
+                   <h2>Use this tool to convert XML into JSON format.</h2>
+                </div>
+             </div>
+
+                
+			</div>
+		</div>
+	</div>
+	<div class="row">
+
+	<div class="col-md-12">
+
+<br>
+        Enter your data below and Press the Convert button <small>(new option to remove top level root node)</small>. 
+            The output will display below the Convert button. <br>
+
+	<form id="frm1" name="frm1" role="form" class="form-inline" onsubmit="return false">
+     <div class="form-group">
+     <b>Option 1 - Choose XML file here</b>
+    <input type="file" id="f1" class="form-control" onchange="loadTextFile(this,assignText)" title="Choose a local XML file">
+   Encoding <input type="text" id="txtEncoding" size="8" value="" onchange="loadTextFile(document.getElementById('f1'),assignText)" title="Enter encoding for input file or empty for default">
+         <br><b>Option 2 - Enter an URL</b> <input type="text" size="40" value="" name="url" id="url" title="Enter the URL of a web page returning XML"> 
+         <input type="button" id="btnUrl" class="btn btn-primary" value="Load URL" title="Load JSON via URL" onclick="loadURL(document.getElementById('url').value)">
+    <br><b>Option 3 -Paste into Text Box below</b>
+      </div>
+     </form></div>
+    
+    </div>
+
+    <div class="row">
+	<div class="col-md-6 col-lg-6">
+			<div class="form-group">
+    <input type="button" value="Clear Input" class="btn btn-primary" onclick="window.location.reload(true)">
+    &nbsp; Examples: 
+      <input type="button" value="1" class="btn btn-primary" title="Load and run example" onclick="document.getElementById('txt1').value=getExampleXml(1);document.getElementById('btnRun').click()">
+      <input type="button" value="2" class="btn btn-primary" title="Load and run example" onclick="document.getElementById('url').value='http://www.w3schools.com/xml/simple.xml';document.getElementById('btnUrl').click()">
+	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="XML Data" onchange="if(this.value!='')runit(this.value)" wrap="off"></textarea>
+			</div>
+			<div class="form-group form-inline">
+						<label>Save your result:</label>
+<input type="text" size="15" id="fn1" value="convertxml" class="form-control" title="Enter filename without extension">.xml
+<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txt1').value,'xml','fn1')">
+	        </div>
+	  </div>
+
+        <div class="col-md-6 col-lg-6">
+			<div class="form-group">
+                 <input type="button" id="btnRun" value="Convert XML To JSON" class="btn btn-primary" title="Convert XML To JSON" onclick="runit(document.getElementById('txt1').value)">
+                 <input type="button" id="btnRun" value="Convert JSON to XML" class="btn btn-primary" title="Convert JSON to XML" onclick="runit2(document.getElementById('txta').value)">
+				<br>
+				<textarea id="txta" rows="15" cols="80" wrap="off" class="form-control" placeholder="JSON Output"></textarea>
+			</div>
+			<div class="form-group form-inline">
+						<label>Save your result:</label>
+<input type="text" size="15" id="fn2" value="convertjson" class="form-control" title="Enter filename without extension">.json
+<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txta').value,'json','fn2')">
+	        </div>
+    </div>
+	<div id="diva"></div>
+    </div>
+
+    <div class="row">
+	    <div class="col-md-12">
+
+</div>
+        </div>
+		</div>
+    
+    <br>
+    <div class="row">
+	    <div class="col-md-12">
+	        <div class="panel-footer">
+                Copyright © 2015-2018 <a href="https://github.com/javadev/">Valentyn Kolesnikov</a> All Rights Reserved<span class="pull-right"> &nbsp; &nbsp; <a href="https://javadev.github.io/xml-to-json/terms-of-use.html">Terms of Use</a></span>
+            </div>
+	    </div>
+    </div>					
+
+
+</body></html>
