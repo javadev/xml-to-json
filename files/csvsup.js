@@ -4,6 +4,12 @@ function getExampleXml(n) {
     return s
 }
 
+function getExampleJson(n) {
+    n = (n || 1) - 1;
+    var s = ["[\n" + "  {\n" + "    \"id\":1," + "    \"name\":\"Johnson, Smith, and Jones Co.\",\n" + "    \"amount\":345.33," + "    \"Remark\":\"Pays on time\"\n" + "  },\n" + "  {\n" + "    \"id\":2," + "    \"name\":\"Sam \\\"Mad Dog\\\" Smith\",\n" + "    \"amount\":993.44," + "    \"Remark\":\"\"\n" + "  },\n" + "  {\n" + "    \"id\":3," + "    \"name\":\"Barney & Company\",\n" + "    \"amount\":0," + "    \"Remark\":\"Great to work with\\nand always pays with cash.\"\n" + "  },\n" + "  {\n" + "    \"id\":4," + "    \"name\":\"Johnson's Automotive\",\n" + "    \"amount\":2344," + "    \"Remark\":\"\"\n" + "  }\n" + "]\n", "{ \"data\" : [\n" + "  {" + "    \"id\":1," + "    \"name\":\"Johnson, Smith, and Jones Co.\"" + "  },\n" + "  {" + "    \"id\":2," + "    \"name\":\"Sam \\\"Mad Dog\\\" Smith\"" + "  },\n" + "  {" + "    \"id\":3," + "    \"name\":\"Barney & Company\"" + "  },\n" + "  {" + "    \"id\":4," + "    \"name\":\"Johnson's Automotive\"" + "  }\n" + "] }\n", "{ \"race\" : \n" + " { \"entries\" : [\n" + "  {" + "    \"id\":11," + "    \"name\":\"Johnson, Smith, and Jones Co.\"" + "  },\n" + "  {" + "    \"id\":22," + "    \"name\":\"Sam \\\"Mad Dog\\\" Smith\"" + "  },\n" + "  {" + "    \"id\":33," + "    \"name\":\"Barney & Company\"" + "  },\n" + "  {" + "    \"id\":44," + "    \"name\":\"Johnson's Automotive\"" + "  }\n" + "] }\n}\n", "{\n" + "    \"id\":1," + "    \"name\":\"Johnson, Smith, and Jones Co.\"," + "    \"amount\":345.33," + "    \"Remark\":\"Pays on time\"\n" + "}\n", "[\n" + "    [" + "      1," + "      \"Johnson, Smith, and Jones Co.\"," + "      345.33" + "    ],\n" + "    [" + "      99," + "      \"Acme Food Inc.\"," + "      2993.55" + "    ]\n" + "]"];
+    return s[n]
+}
+
 function loadScript(url) {
     var s = document.createElement("script");
     s.type = "text/javascript";
@@ -13,10 +19,10 @@ function loadScript(url) {
 }
 
 function loadScriptAndRun(url) {
-    if (!url.startsWith('?')) {
+    if (!url.indexOf('?') == 0) {
         url = '?' + url
     }
-    loadScript("http://www.ddginc-usa.com/cgi-bin/url-to-json.php" + url)
+    loadScript("https://www.ddginc-usa.com/cgi-bin/url-to-json.php" + url)
 }
 
 function loadDataAndRun(data) {

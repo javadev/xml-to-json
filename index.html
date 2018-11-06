@@ -42,27 +42,6 @@ function runit(s) {
    }
    
 }
-
-function runit2(s) {
-   var t;
-   var s;
-   var keys = {};
-   var objects = {};
-   var msg='Invalid JSON entered.';
-
-   if(s.trim()!="") {
-      try {
-       t=jsonToXml(s);
-       if(t!="null" && t!="undefined")document.getElementById('txt1').value = t;
-       }catch (e) {
-           alert(msg);
-           return;
-       }
-
-       if(!t || t=="null") {alert(msg); }
-   }
-   
-}
 </script>
 
 <body>
@@ -100,6 +79,7 @@ function runit2(s) {
 <br>
         Enter your data below and Press the Convert button. 
             The output will display below the Convert button. <br>
+         See also <a href="https://javadev.github.io/xml-to-json/json-to-xml.html">JSON to XML</a><br>
 
 	<form id="frm1" name="frm1" role="form" class="form-inline" onsubmit="return false">
      <div class="form-group">
@@ -133,7 +113,6 @@ function runit2(s) {
         <div class="col-md-6 col-lg-6">
 			<div class="form-group">
                  <input type="button" id="btnRun" value="Convert XML To JSON" class="btn btn-primary" title="Convert XML To JSON" onclick="runit(document.getElementById('txt1').value)">
-                 <input type="button" id="btnRun" value="Convert JSON to XML" class="btn btn-primary" title="Convert JSON to XML" onclick="runit2(document.getElementById('txta').value)">
 				<br>
 				<textarea id="txta" rows="15" cols="80" wrap="off" class="form-control" placeholder="JSON Output"></textarea>
 			</div>

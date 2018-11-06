@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Convert JSON to XML">
+<meta http-equiv="Cache-control" content="No-Cache">
+<meta name="keywords" content="Free Online JSON To XML Converter">
+<meta name="description" content="The tool will convert a JSON file to XML format.">
+<link rel="stylesheet" href="./files/bootstrap.min.css">
+<script src="./files/jquery.min.js" type="text/javascript"></script>
+<script src="./files/bootstrap.min.js"></script>
+<title>JSON To XML Converter</title>
+<script src="./files/localread.js"></script>
+<script src="./files/filesaver.js"></script>
+<script src="./files/csvsup.js"></script>
+<script src="./files/validation.nocache.js" type="text/javascript" ></script>
+<link rel="icon" type="image/png" href="files/xmltojson.png">
+<link rel="stylesheet" href="./files/nav.css">
+
+<script type="text/javascript">
+
+function assignText(s) {
+   document.getElementById('txt1').value = s;
+   document.getElementById('btnRun').click();
+}
+function runExample(n) {
+    document.getElementById('txt1').value=getExampleJson(n);
+    document.getElementById('btnRun').click()
+}
+
+function runit(s) {
+   var t;
+   var msg='Invalid JSON entered.';
+
+   if(s.trim()!="") {
+      try {
+       t=jsonToXml(s);
+       if(t!="null" && t!="undefined")document.getElementById('txta').value = t;
+       }catch (e) {
+           alert(msg);
+           return;
+       }
+
+       if(!t || t=="null") {alert(msg); }
+   }
+   
+}
+
+</script>
+</head> 
+<body>
+<div class="container-fluid">
+
+<div class="row">
+		<div class="col-md-3">
+				<a href="https://javadev.github.io/xml-to-json/">
+					<div id="logo">
+						<img height="120px" src="./files/xmltojson.png" alt="Home Page">
+					</div>
+				</a>
+		</div>
+		<div class="col-md-9">
+			<div id="site-title">
+                	    <div class="pageHeader">
+                <h1 class="text-center"></h1><h1>Convert JSON To XML</h1>
+        </div>
+
+				
+              <div class="row">
+                 <div class="container-fluid pageSubheader">
+                   <h2>Use this tool to convert JSON into XML format.</h2>
+                </div>
+             </div>
+
+                
+			</div>
+		</div>
+</div>
+
+<div class="row">
+
+	<div class="col-md-12">
+<br>
+        Enter your data below and Press the Convert button. The output will display below the Convert button. 
+        <br>See also <a href="https://javadev.github.io/xml-to-json/index.html">XML to JSON</a><br>
+
+
+	<form id="frm1" name="frm1" role="form" class="form-inline" onsubmit="return false">
+	<div class="form-group">
+            <b>Option 1 - Choose JSON file</b> 
+       <input type="file" id="f1" class="form-control" onchange="loadTextFile(this,assignText,event)" title="Choose a local JSON file">
+      <span id="spanEncoding">Encoding</span> <input type="text" id="txtEncoding" size="12" value="" onchange="loadTextFile(document.getElementById('f1'),assignText)" title="Enter encoding for input file or empty for default">
+       <br><b>Option 2 - Enter an URL</b> <input type="text" size="40" value="" name="url" id="url" class="form-control" title="Enter the URL of a web page"> 
+        <input type="button" id="btnUrl" class="btn btn-primary" value="Load URL" title="Load JSON via URL" onclick="loadURL(document.getElementById('url').value)">
+       <br><b>Option 3 - paste into Text Box below</b><br>
+       </div>
+      </form></div>
+    </div>
+
+    <div class="row">
+	<div class="col-md-6">
+
+	<label>JSON Data</label>  &nbsp; &nbsp;
+    <input type="button" value="Clear Input" class="btn btn-primary" onclick="window.location.reload(true)" title="Clear screen">
+    <input type="button" value="Format JSON" class="btn btn-primary" onclick="document.getElementById('txt1').value=formatJson(document.getElementById('txt1').value)" title="Format JSON below to look pretty">
+    &nbsp; Examples: 
+      <input type="button" value="1" class="btn btn-primary" title="Load and run example" onclick="runExample(1)">
+      <input type="button" value="2" class="btn btn-primary" title="Load and run example" onclick="runExample(2)">
+      <input type="button" value="3" class="btn btn-primary" title="Load and run example" onclick="runExample(3)">
+      <input type="button" value="4" class="btn btn-primary" title="Load and run example" onclick="runExample(4)">
+      <input type="button" value="5" class="btn btn-primary" title="Load and run example" onclick="runExample(5)">
+      <input type="button" value="6" class="btn btn-primary" title="Load JSON from web page" onclick="document.getElementById('url').value='http://date.jsontest.com';document.getElementById('btnUrl').click()">
+ 
+	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="JSON Data" onchange="if(this.value!='')runit(document.getElementById('txt1').value)" wrap="off"></textarea>
+	</div>
+   
+	<div class="col-md-6">
+			<div class="form-group">
+                 <input type="button" id="btnRun" value="Convert JSON To XML" class="btn btn-primary" title="Convert JSON To XML" onclick="runit(document.getElementById('txt1').value)">
+
+						<label>XML Output:</label>
+				<textarea id="txta" rows="15" cols="100" wrap="off" class="form-control"></textarea>
+			</div>
+			<div class="form-group form-inline">
+						<label>Save your result:</label>
+<input type="text" size="15" id="fn" value="convertjson" class="form-control" title="Enter filename without extension">.xml
+<input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txta').value,'xml','fn')">
+	        </div>
+	<div id="diva"></div>
+    </div>
+ 
+
+    <div class="row">
+	    <div class="col-md-12">
+        </div>
+    </div>
+
+    </div>
+    <br>
+    <div class="row">
+	    <div class="col-md-12">
+	        <div class="panel-footer">
+                Copyright © 2015-2018 <a href="https://github.com/javadev/">Valentyn Kolesnikov</a> All Rights Reserved<span class="pull-right"> &nbsp; &nbsp; <a href="https://javadev.github.io/xml-to-json/terms-of-use.html">Terms of Use</a></span>
+            </div>
+	    </div>
+    </div>					
+</div>
+
+</body></html>
