@@ -2,7 +2,6 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Convert XML to JSON">
 <meta http-equiv="Cache-control" content="No-Cache">
 <meta name="keywords" content="Free Online XML To JSON Converter">
 <meta name="description" content="The tool will convert a XML file to JSON format.">
@@ -48,14 +47,14 @@ function runit(s) {
 		<div class="col-md-3">
 				<a href="https://javadev.github.io/xml-to-json/">
 					<div id="logo">
-						<img height="120px" src="./files/xmltojson.png" alt="Home Page">
+						<img height="120" src="./files/xmltojson.png" alt="Home Page">
 					</div>
 				</a>
 		</div>
 		<div class="col-md-9">
 			<div id="site-title">
                 	    <div class="pageHeader">
-                <h1 class="text-center"></h1><h1>Convert XML To JSON</h1>
+                <h1>Convert XML To JSON</h1>
         </div>
 
 				
@@ -78,7 +77,7 @@ function runit(s) {
             The output will display below the Convert button. <br>
          See also <a href="https://javadev.github.io/xml-to-json/json-to-xml.html">JSON to XML</a><br>
 
-	<form id="frm1" name="frm1" role="form" class="form-inline" onsubmit="return false">
+	<form id="frm1" name="frm1" class="form-inline" onsubmit="return false">
      <div class="form-group">
      <b>Option 1 - Choose XML file here</b>
     <input type="file" id="f1" class="form-control" onchange="loadTextFile(this,assignText)" title="Choose a local XML file">
@@ -99,7 +98,7 @@ function runit(s) {
     &nbsp; Examples: 
       <input type="button" value="1" class="btn btn-primary" title="Load and run example" onclick="document.getElementById('txt1').value=getExampleXml(1);document.getElementById('btnRun').click()">
       <input type="button" value="2" class="btn btn-primary" title="Load and run example" onclick="document.getElementById('url').value='http://www.w3schools.com/xml/simple.xml';document.getElementById('btnUrl').click()">
-	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="XML Data" onchange="if(this.value!='')runit(this.value)" wrap="off"></textarea>
+	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="XML Data" onchange="if(this.value!='')runit(this.value)" wrap="soft"></textarea>
 			</div>
                        <div class="form-group form-inline">
                                                <label>Save your result:</label>
@@ -112,7 +111,7 @@ function runit(s) {
 			<div class="form-group">
                  <input type="button" id="btnRun" value="Convert XML To JSON" class="btn btn-primary" title="Convert XML To JSON" onclick="runit(document.getElementById('txt1').value)">
 				<br>
-				<textarea id="txta" rows="15" cols="80" wrap="off" class="form-control" placeholder="JSON Output"></textarea>
+				<textarea id="txta" rows="15" cols="80" wrap="soft" class="form-control" placeholder="JSON Output"></textarea>
 			</div>
 			<div class="form-group form-inline">
 						<label>Save your result:</label>

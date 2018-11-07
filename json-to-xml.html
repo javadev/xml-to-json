@@ -2,7 +2,6 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Convert JSON to XML">
 <meta http-equiv="Cache-control" content="No-Cache">
 <meta name="keywords" content="Free Online JSON To XML Converter">
 <meta name="description" content="The tool will convert a JSON file to XML format.">
@@ -55,14 +54,14 @@ function runit(s) {
 		<div class="col-md-3">
 				<a href="https://javadev.github.io/xml-to-json/">
 					<div id="logo">
-						<img height="120px" src="./files/xmltojson.png" alt="Home Page">
+						<img height="120" src="./files/xmltojson.png" alt="Home Page">
 					</div>
 				</a>
 		</div>
 		<div class="col-md-9">
 			<div id="site-title">
                 	    <div class="pageHeader">
-                <h1 class="text-center"></h1><h1>Convert JSON To XML</h1>
+                <h1>Convert JSON To XML</h1>
         </div>
 
 				
@@ -85,7 +84,7 @@ function runit(s) {
         <br>See also <a href="https://javadev.github.io/xml-to-json/index.html">XML to JSON</a><br>
 
 
-	<form id="frm1" name="frm1" role="form" class="form-inline" onsubmit="return false">
+	<form id="frm1" name="frm1" class="form-inline" onsubmit="return false">
 	<div class="form-group">
             <b>Option 1 - Choose JSON file</b> 
        <input type="file" id="f1" class="form-control" onchange="loadTextFile(this,assignText,event)" title="Choose a local JSON file">
@@ -112,7 +111,7 @@ function runit(s) {
       <input type="button" value="5" class="btn btn-primary" title="Load and run example" onclick="runExample(5)">
       <input type="button" value="6" class="btn btn-primary" title="Load JSON from web page" onclick="document.getElementById('url').value='http://date.jsontest.com';document.getElementById('btnUrl').click()">
  
-	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="JSON Data" onchange="if(this.value!='')runit(document.getElementById('txt1').value)" wrap="off"></textarea>
+	<textarea class="form-control" rows="15" cols="80" id="txt1" placeholder="JSON Data" onchange="if(this.value!='')runit(document.getElementById('txt1').value)" wrap="soft"></textarea>
 			</div>
 			<div class="form-group form-inline">
 						<label>Save your result:</label>
@@ -125,7 +124,7 @@ function runit(s) {
 			<div class="form-group">
                  <input type="button" id="btnRun" value="Convert JSON To XML" class="btn btn-primary" title="Convert JSON To XML" onclick="runit(document.getElementById('txt1').value)">
 				<br>
-				<textarea id="txta" rows="15" cols="100" wrap="off" class="form-control" placeholder="XML Output"></textarea>
+				<textarea id="txta" rows="15" cols="100" wrap="soft" class="form-control" placeholder="XML Output"></textarea>
 			</div>
 			<div class="form-group form-inline">
 						<label>Save your result:</label>
