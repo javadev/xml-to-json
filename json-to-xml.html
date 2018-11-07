@@ -8,12 +8,12 @@
 <meta name="description" content="The tool will convert a JSON file to XML format.">
 <link rel="stylesheet" href="./files/bootstrap.min.css">
 <script src="./files/jquery.min.js" type="text/javascript"></script>
-<script src="./files/bootstrap.min.js"></script>
+<script src="./files/bootstrap.min.js" type="text/javascript"></script>
 <title>JSON To XML Converter</title>
-<script src="./files/localread.js"></script>
-<script src="./files/filesaver.js"></script>
-<script src="./files/csvsup.js"></script>
-<script src="./files/validation.nocache.js" type="text/javascript" ></script>
+<script src="./files/localread.js" type="text/javascript"></script>
+<script src="./files/filesaver.js" type="text/javascript"></script>
+<script src="./files/csvsup.js" type="text/javascript"></script>
+<script src="./files/validation.nocache.js" type="text/javascript"></script>
 <link rel="icon" type="image/png" href="files/xmltojson.png">
 <link rel="stylesheet" href="./files/nav.css">
 
@@ -116,7 +116,7 @@ function runit(s) {
 			</div>
 			<div class="form-group form-inline">
 						<label>Save your result:</label>
-<input type="text" size="15" id="fn1" value="convertjson" class="form-control" title="Enter filename without extension">.xml
+<input type="text" size="15" id="fn1" value="convertjson" class="form-control" title="Enter filename without extension">.json
 <input type="button" class="btn btn-primary" value="Download Result" onclick="saveFile(document.getElementById('txt1').value,'json','fn1')">
 	        </div>
 	</div>

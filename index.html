@@ -2,18 +2,18 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Convert JSON to XML">
+<meta name="description" content="Convert XML to JSON">
 <meta http-equiv="Cache-control" content="No-Cache">
 <meta name="keywords" content="Free Online XML To JSON Converter">
 <meta name="description" content="The tool will convert a XML file to JSON format.">
 <link rel="stylesheet" href="./files/bootstrap.min.css">
 <script src="./files/jquery.min.js" type="text/javascript"></script>
-<script src="./files/bootstrap.min.js"></script>
+<script src="./files/bootstrap.min.js" type="text/javascript"></script>
 <title>XML To JSON Converter</title>
-<script src="./files/localread.js"></script>
-<script src="./files/filesaver.js"></script>
-<script src="./files/csvsup.js"></script>
-<script src="./files/validation.nocache.js" type="text/javascript" ></script>
+<script src="./files/localread.js" type="text/javascript"></script>
+<script src="./files/filesaver.js" type="text/javascript"></script>
+<script src="./files/csvsup.js" type="text/javascript"></script>
+<script src="./files/validation.nocache.js" type="text/javascript"></script>
 <link rel="icon" type="image/png" href="files/xmltojson.png">
 <link rel="stylesheet" href="./files/nav.css">
 
@@ -24,9 +24,6 @@ function assignText(s) {
 }
 function runit(s) {
    var t;
-   var s;
-   var keys = {};
-   var objects = {};
    var msg='Invalid XML entered.';
 
    if(s.trim()!="") {
