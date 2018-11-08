@@ -22,7 +22,7 @@ function loadScriptAndRun(url) {
     if (!url.indexOf('?') == 0) {
         url = '?' + url
     }
-    loadScript("https://www.ddginc-usa.com/cgi-bin/url-to-json.php" + url)
+    loadScript("https://xml-json.herokuapp.com/" + url)
 }
 
 function loadDataAndRun(data) {
