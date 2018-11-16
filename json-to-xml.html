@@ -87,7 +87,7 @@ function runit(s) {
 	<div class="form-group">
             <b>Option 1 - Choose JSON file</b> 
        <input type="file" id="f1" class="form-control" onchange="loadTextFile(this,assignText)" title="Choose a local JSON file">
-      <span id="spanEncoding">Encoding</span> <input type="text" id="txtEncoding" size="12" value="" onchange="loadTextFile(document.getElementById('f1'),assignText)" title="Enter encoding for input file or empty for default">
+      <span id="spanEncoding">Encoding</span> <input type="text" id="txtEncoding" class="form-control" size="8" value="" onchange="loadTextFile(document.getElementById('f1'),assignText)" title="Enter encoding for input file or empty for default">
        <br><b>Option 2 - Enter an URL</b> <input type="text" size="40" value="" name="url" id="url" class="form-control" title="Enter the URL of a web page"> 
         <input type="button" id="btnUrl" class="btn btn-primary" value="Load URL" title="Load JSON via URL" onclick="loadURL(document.getElementById('url').value)">
        <br><b>Option 3 - Paste into Text Box below</b>
