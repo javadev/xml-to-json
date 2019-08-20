@@ -1,0 +1,26 @@
+{
+  "name": "xmltojson",
+  "version": "1.0.0",
+  "description": "The utility to convert xml to json an vice versa.",
+  "keywords": [
+    "Compare",
+    "Strings"
+  ],
+  "homepage": "https://github.com/javadev/xml-to-json",
+  "author": "Valentyn Kolesnikov",
+  "contributors": [
+    "Valentyn Kolesnikov"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javadev/xml-to-json.git"
+  },
+  "bugs:": "https://github.com/javadev/xml-to-json/issues",
+  "main": "./xmltojson.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
