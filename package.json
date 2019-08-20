@@ -1,10 +1,13 @@
 {
   "name": "@javadev/xmltojson",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The utility to convert xml to json an vice versa.",
   "keywords": [
-    "Compare",
-    "Strings"
+    "xml",
+    "xml2json",
+    "convert",
+    "transform",
+    "json"
   ],
   "homepage": "https://github.com/javadev/xml-to-json",
   "author": "Valentyn Kolesnikov",
