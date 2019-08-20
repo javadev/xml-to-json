@@ -15,7 +15,7 @@ var json = xmlToJson("<a/>");
 //   "#omit-xml-declaration": "yes"
 // }
 
-jsonToXml("{}");
+var xml = jsonToXml("{}");
 
 // <?xml version="1.0" encoding="UTF-8"?>
 // <root></root>
