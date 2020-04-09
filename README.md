@@ -27,6 +27,11 @@ var xml = jsonToXml("{}");
 // <?xml version="1.0" encoding="UTF-8"?>
 // <root></root>
 
+var xml = jsonToXml("{}", "myroot", "myelement");
+
+// <?xml version="1.0" encoding="UTF-8"?>
+// <myroot></myroot>
+
 var prettyJson = formatJson('{"a":{"b":true}}');
 
 // {

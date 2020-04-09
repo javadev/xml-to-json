@@ -1,6 +1,6 @@
 {
   "name": "@javadev/xmltojson",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The utility to convert xml to json and vice versa.",
   "keywords": [
     "xml",
@@ -14,7 +14,9 @@
   "contributors": [
     "Valentyn Kolesnikov"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "xmltojson": "^1.3.5"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",
