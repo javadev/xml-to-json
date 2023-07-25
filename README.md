@@ -1,5 +1,5 @@
-xmltojson
-=========
+xml-to-json
+===========
 
 The utility to convert xml to json and vice versa.
 It also can prettify xml and json strings.
