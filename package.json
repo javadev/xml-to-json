@@ -1,7 +1,7 @@
 {
   "name": "@javadev/xmltojson",
-  "version": "1.0.8",
-  "description": "The utility to convert xml to json and vice versa.",
+  "version": "1.0.9",
+  "description": "The utility for converting XML to JSON and vice versa.",
   "keywords": [
     "xml",
     "xml2json",
