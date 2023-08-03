@@ -1,8 +1,7 @@
 xml-to-json
 ===========
 
-XML to JSON and JSON to XML conversion utility..
-It also can prettify xml and json strings.
+Utility for converting between XML and JSON formats, with the added ability to prettify both XML and JSON strings.
 
 ### Usage
 
